@@ -1,0 +1,3 @@
+# Configuração para forçar modo estático
+framework: null
+functionsDirectory: null
