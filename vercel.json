@@ -1,4 +1,10 @@
 {
   "version": 2,
-  "name": "quiz-frances-charlie"
+  "name": "quiz-frances-charlie",
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    }
+  ]
 }
