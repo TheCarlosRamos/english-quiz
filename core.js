@@ -9,6 +9,11 @@
     return others.slice(0, count);
   }
 
+  function termOf(item){
+    if (item && item.en != null) return item.en;
+    return item.fr;
+  }
+
   function createGame(data, opts){
     const TOTAL = (opts && opts.rounds) || 10;
     const title = (opts && opts.title) || 'Quiz';
@@ -64,7 +69,7 @@
       progressEl.style.width = `${Math.round((step-1)/TOTAL*100)}%`;
 
       const r = rounds[current];
-      termEl.textContent = r.item.fr;
+      termEl.textContent = termOf(r.item);
       choicesEl.innerHTML = '';
       r.options.forEach(opt => {
         const li = document.createElement('li');
@@ -106,7 +111,7 @@
       usedListEl.innerHTML = '';
       rounds.forEach(r => {
         const li = document.createElement('li');
-        li.textContent = `${r.item.fr} → ${r.item.pt}`;
+        li.textContent = `${termOf(r.item)} → ${r.item.pt}`;
         usedListEl.appendChild(li);
       });
       showScreen('end');

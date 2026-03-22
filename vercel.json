@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "quiz-frances-charlie",
+  "name": "english-quiz-charlie",
   "builds": [
     {
       "src": "**/*.{html,css,js}",

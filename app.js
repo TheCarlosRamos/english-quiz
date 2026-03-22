@@ -1,61 +1,68 @@
 
-// Quiz de passé composé (il, masc. sing.) com alternativas menos óbvias
+// Quiz de past simple (he) — verbos irregulares em inglês
 const VERBS = [
-  { inf: 'être', pc: 'il a été' },
-  { inf: 'avoir', pc: 'il a eu' },
-  { inf: 'aller', pc: 'il est allé' },
-  { inf: 'faire', pc: 'il a fait' },
-  { inf: 'dire', pc: 'il a dit' },
-  { inf: 'voir', pc: 'il a vu' },
-  { inf: 'venir', pc: 'il est venu' },
-  { inf: 'devenir', pc: 'il est devenu' },
-  { inf: 'revenir', pc: 'il est revenu' },
-  { inf: 'prendre', pc: 'il a pris' },
-  { inf: 'mettre', pc: 'il a mis' },
-  { inf: 'pouvoir', pc: 'il a pu' },
-  { inf: 'vouloir', pc: 'il a voulu' },
-  { inf: 'devoir', pc: 'il a dû' },
-  { inf: 'savoir', pc: 'il a su' },
-  { inf: 'lire', pc: 'il a lu' },
-  { inf: 'boire', pc: 'il a bu' },
-  { inf: 'écrire', pc: 'il a écrit' },
-  { inf: 'recevoir', pc: 'il a reçu' },
-  { inf: 'connaître', pc: 'il a connu' },
-  { inf: 'croire', pc: 'il a cru' },
-  { inf: 'tenir', pc: 'il a tenu' },
-  { inf: 'obtenir', pc: 'il a obtenu' },
-  { inf: 'apprendre', pc: 'il a appris' },
-  { inf: 'comprendre', pc: 'il a compris' },
-  { inf: 'ouvrir', pc: 'il a ouvert' },
-  { inf: 'découvrir', pc: 'il a découvert' },
-  { inf: 'offrir', pc: 'il a offert' },
-  { inf: 'souffrir', pc: 'il a souffert' },
-  { inf: 'vivre', pc: 'il a vécu' },
-  { inf: 'courir', pc: 'il a couru' },
-  { inf: 'falloir', pc: 'il a fallu' },
-  { inf: 'pleuvoir', pc: 'il a plu' },
-  { inf: 'arriver', pc: 'il est arrivé' },
-  { inf: 'partir', pc: 'il est parti' },
-  { inf: 'entrer', pc: 'il est entré' },
-  { inf: 'sortir', pc: 'il est sorti' },
-  { inf: 'rentrer', pc: 'il est rentré' },
-  { inf: 'rester', pc: 'il est resté' },
-  { inf: 'tomber', pc: 'il est tombé' },
-  { inf: 'naître', pc: 'il est né' },
-  { inf: 'mourir', pc: 'il est mort' },
-  { inf: 'asseoir', pc: 'il a assis' },
-  { inf: 'dormir', pc: 'il a dormi' },
-  { inf: 'rire', pc: 'il a ri' },
-  { inf: 'servir', pc: 'il a servi' },
-  { inf: 'sentir', pc: 'il a senti' },
-  { inf: 'suivre', pc: 'il a suivi' },
-  { inf: 'produire', pc: 'il a produit' },
-  { inf: 'traduire', pc: 'il a traduit' },
-  { inf: 'permettre', pc: 'il a permis' },
-  { inf: 'promettre', pc: 'il a promis' },
-  { inf: 'prévenir', pc: 'il a prévenu' },
-  { inf: 'maintenir', pc: 'il a maintenu' },
-  { inf: 'soutenir', pc: 'il a soutenu' },
+  { inf: 'be', past: 'he was' },
+  { inf: 'have', past: 'he had' },
+  { inf: 'go', past: 'he went' },
+  { inf: 'do', past: 'he did' },
+  { inf: 'say', past: 'he said' },
+  { inf: 'see', past: 'he saw' },
+  { inf: 'come', past: 'he came' },
+  { inf: 'get', past: 'he got' },
+  { inf: 'make', past: 'he made' },
+  { inf: 'take', past: 'he took' },
+  { inf: 'know', past: 'he knew' },
+  { inf: 'think', past: 'he thought' },
+  { inf: 'put', past: 'he put' },
+  { inf: 'give', past: 'he gave' },
+  { inf: 'find', past: 'he found' },
+  { inf: 'tell', past: 'he told' },
+  { inf: 'become', past: 'he became' },
+  { inf: 'leave', past: 'he left' },
+  { inf: 'feel', past: 'he felt' },
+  { inf: 'bring', past: 'he brought' },
+  { inf: 'begin', past: 'he began' },
+  { inf: 'keep', past: 'he kept' },
+  { inf: 'let', past: 'he let' },
+  { inf: 'mean', past: 'he meant' },
+  { inf: 'set', past: 'he set' },
+  { inf: 'meet', past: 'he met' },
+  { inf: 'run', past: 'he ran' },
+  { inf: 'sit', past: 'he sat' },
+  { inf: 'speak', past: 'he spoke' },
+  { inf: 'lie', past: 'he lied' },
+  { inf: 'lead', past: 'he led' },
+  { inf: 'read', past: 'he read' },
+  { inf: 'grow', past: 'he grew' },
+  { inf: 'lose', past: 'he lost' },
+  { inf: 'fall', past: 'he fell' },
+  { inf: 'send', past: 'he sent' },
+  { inf: 'build', past: 'he built' },
+  { inf: 'understand', past: 'he understood' },
+  { inf: 'draw', past: 'he drew' },
+  { inf: 'break', past: 'he broke' },
+  { inf: 'spend', past: 'he spent' },
+  { inf: 'cut', past: 'he cut' },
+  { inf: 'rise', past: 'he rose' },
+  { inf: 'drive', past: 'he drove' },
+  { inf: 'buy', past: 'he bought' },
+  { inf: 'wear', past: 'he wore' },
+  { inf: 'choose', past: 'he chose' },
+  { inf: 'seek', past: 'he sought' },
+  { inf: 'fight', past: 'he fought' },
+  { inf: 'teach', past: 'he taught' },
+  { inf: 'catch', past: 'he caught' },
+  { inf: 'sell', past: 'he sold' },
+  { inf: 'stand', past: 'he stood' },
+  { inf: 'hold', past: 'he held' },
+  { inf: 'write', past: 'he wrote' },
+  { inf: 'hear', past: 'he heard' },
+  { inf: 'win', past: 'he won' },
+  { inf: 'pay', past: 'he paid' },
+  { inf: 'eat', past: 'he ate' },
+  { inf: 'swim', past: 'he swam' },
+  { inf: 'fly', past: 'he flew' },
+  { inf: 'shake', past: 'he shook' },
 ];
 
 const TOTAL_ROUNDS = 10;
@@ -69,63 +76,42 @@ function shuffle(arr) {
   return a;
 }
 
-function stripDiacritics(s) {
-  return s.normalize('NFD').replace(/\p{Diacritic}/gu, '');
+function guessRegularPast(inf) {
+  if (/[^aeiou]y$/i.test(inf)) return 'he ' + inf.slice(0, -1) + 'ied';
+  if (/e$/i.test(inf)) return 'he ' + inf + 'd';
+  return 'he ' + inf + 'ed';
 }
 
-function swapAux(pc) {
-  if (/^il\s+a\s+/i.test(pc)) return pc.replace(/^il\s+a\s+/i, 'il est ');
-  if (/^il\s+est\s+/i.test(pc)) return pc.replace(/^il\s+est\s+/i, 'il a ');
-  return pc;
+function presentThirdPerson(inf) {
+  if (/[^aeiou]y$/i.test(inf)) return 'he ' + inf.slice(0, -1) + 'ies';
+  if (/^(go|do)$/i.test(inf)) return inf.toLowerCase() === 'go' ? 'he goes' : 'he does';
+  if (/^(have|be)$/i.test(inf)) return inf.toLowerCase() === 'have' ? 'he has' : 'he is';
+  return 'he ' + inf + 's';
 }
 
-function guessRegularParticiple(inf) {
-  if (inf.endsWith('er')) return inf.slice(0, -2) + 'é';
-  if (inf.endsWith('ir')) return inf.slice(0, -2) + 'i';
-  if (inf.endsWith('re')) return inf.slice(0, -2) + 'u';
-  return inf;
-}
-
-function corruptParticiple(form) {
-  const m = form.match(/^(il\s+(?:a|est)\s+)(.+)$/i);
+function corruptPast(form) {
+  const m = form.match(/^he\s+(.+)$/i);
   if (!m) return form;
-  const aux = m[1];
-  const part = m[2];
-  const variants = new Set();
-  variants.add(stripDiacritics(part)); // remove acentos: dû -> du, né -> ne
-  variants.add(part.replace(/u$/i, 'us')); // plural indevido
-  variants.add(part.replace(/i$/i, 'is'));
-  variants.add(part.replace(/é$/i, 'er')); // confunde com infinitivo
-  variants.add(part.replace(/t$/i, 'te')); // acordo indevido
-  variants.add(part.replace(/.$/, m => m + 'e')); // acrescenta e
-  const arr = [...variants].filter(v => v && v !== part);
-  if (!arr.length) return form;
-  const pick = arr[Math.floor(Math.random() * arr.length)];
-  return aux + pick;
-}
-
-function verbTakesEtre(inf) {
-  return /^(aller|venir|devenir|revenir|arriver|partir|entrer|sortir|rentrer|rester|tomber|naître|mourir)$/.test(inf);
+  const w = m[1];
+  const tries = [
+    'he ' + w + 'ed',
+    'he ' + w.replace(/.$/, '') + (w.length > 2 ? w.slice(-2) : w),
+    form.replace(/^he /i, 'he have '),
+  ];
+  const pick = tries.find(t => t.toLowerCase() !== form.toLowerCase());
+  return pick || ('he ' + w + 's');
 }
 
 function plausibleDistractors(verb, allVerbs) {
   const distractors = new Set();
-
-  // 1) Trocar auxiliar
-  distractors.add(swapAux(verb.pc));
-
-  // 2) Regularizar pelo infinitivo com auxiliar presumido
-  const reg = `il ${verbTakesEtre(verb.inf) ? 'est' : 'a'} ${guessRegularParticiple(verb.inf)}`;
-  if (reg !== verb.pc) distractors.add(reg);
-
-  // 3) Corrupção do particípio
-  distractors.add(corruptParticiple(verb.pc));
-
-  // 4) Uma resposta correta de outro verbo (mantém variedade)
+  const reg = guessRegularPast(verb.inf);
+  if (reg.toLowerCase() !== verb.past.toLowerCase()) distractors.add(reg);
+  const pres = presentThirdPerson(verb.inf);
+  if (pres.toLowerCase() !== verb.past.toLowerCase()) distractors.add(pres);
+  distractors.add(corruptPast(verb.past));
   const other = allVerbs.filter(v => v.inf !== verb.inf);
-  if (other.length) distractors.add(other[Math.floor(Math.random() * other.length)].pc);
-
-  distractors.delete(verb.pc);
+  if (other.length) distractors.add(other[Math.floor(Math.random() * other.length)].past);
+  distractors.delete(verb.past);
   return [...distractors];
 }
 
@@ -174,8 +160,8 @@ function startGame() {
 function makeRound(verb) {
   const pool = plausibleDistractors(verb, VERBS);
   const distracts = shuffle(pool).slice(0, 2);
-  const options = shuffle([verb.pc, ...distracts]);
-  return { verb, options, answer: verb.pc };
+  const options = shuffle([verb.past, ...distracts]);
+  return { verb, options, answer: verb.past };
 }
 
 function renderRound() {
@@ -231,7 +217,7 @@ function endGame() {
   usedListEl.innerHTML = '';
   rounds.forEach(r => {
     const li = document.createElement('li');
-    li.textContent = `${r.verb.inf} → ${r.verb.pc}`;
+    li.textContent = `${r.verb.inf} → ${r.verb.past}`;
     usedListEl.appendChild(li);
   });
   showScreen('end');
